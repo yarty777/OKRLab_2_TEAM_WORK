@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\OKR_LR2\\OKRLR_2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|d:\\okr_lr2\\okrlr_2\\okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|solutionrelative:okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form1.cs",
+              "RelativeDocumentMoniker": "OKRLR_2\\Form1.cs",
+              "ToolTip": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form1.cs [Design]",
+              "RelativeToolTip": "OKRLR_2\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T10:10:23.184Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
