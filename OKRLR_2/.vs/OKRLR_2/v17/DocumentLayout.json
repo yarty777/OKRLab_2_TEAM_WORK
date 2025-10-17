@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\OKR_LR2\\OKRLR_2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|d:\\okr_lr2\\okrlr_2\\okrlr_2\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|solutionrelative:okrlr_2\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|d:\\okr_lr2\\okrlr_2\\okrlr_2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|solutionrelative:okrlr_2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|d:\\okr_lr2\\okrlr_2\\okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|solutionrelative:okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -23,6 +31,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "OKRLR_2\\Form1.Designer.cs",
+              "ToolTip": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form1.Designer.cs",
+              "RelativeToolTip": "OKRLR_2\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:32:11.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Program.cs",
+              "RelativeDocumentMoniker": "OKRLR_2\\Program.cs",
+              "ToolTip": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Program.cs",
+              "RelativeToolTip": "OKRLR_2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:32:03.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form1.cs",
               "RelativeDocumentMoniker": "OKRLR_2\\Form1.cs",
