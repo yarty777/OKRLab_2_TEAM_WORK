@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            Category = new DataGridViewTextBoxColumn();
+            Sum = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Comment = new DataGridViewTextBoxColumn();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             textBox1 = new TextBox();
@@ -41,10 +45,6 @@
             deleteToolStripMenuItem = new ToolStripMenuItem();
             увійтиToolStripMenuItem = new ToolStripMenuItem();
             заєструватисяToolStripMenuItem = new ToolStripMenuItem();
-            Category = new DataGridViewTextBoxColumn();
-            Sum = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Comment = new DataGridViewTextBoxColumn();
             label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -55,11 +55,39 @@
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Category, Sum, Date, Comment });
-            dataGridView1.Location = new Point(233, 136);
+            dataGridView1.Location = new Point(216, 136);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(564, 342);
+            dataGridView1.Size = new Size(664, 342);
             dataGridView1.TabIndex = 0;
+            // 
+            // Category
+            // 
+            Category.HeaderText = "Категорія";
+            Category.MinimumWidth = 8;
+            Category.Name = "Category";
+            Category.Width = 150;
+            // 
+            // Sum
+            // 
+            Sum.HeaderText = "Сума";
+            Sum.MinimumWidth = 8;
+            Sum.Name = "Sum";
+            Sum.Width = 150;
+            // 
+            // Date
+            // 
+            Date.HeaderText = "Дата";
+            Date.MinimumWidth = 8;
+            Date.Name = "Date";
+            Date.Width = 150;
+            // 
+            // Comment
+            // 
+            Comment.HeaderText = "Коментар";
+            Comment.MinimumWidth = 8;
+            Comment.Name = "Comment";
+            Comment.Width = 150;
             // 
             // comboBox1
             // 
@@ -117,7 +145,7 @@
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, увійтиToolStripMenuItem, заєструватисяToolStripMenuItem });
-            menuStrip1.Location = new Point(395, 19);
+            menuStrip1.Location = new Point(383, 27);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(485, 36);
             menuStrip1.TabIndex = 7;
@@ -130,6 +158,7 @@
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.Size = new Size(65, 32);
             addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -159,32 +188,6 @@
             заєструватисяToolStripMenuItem.Size = new Size(179, 32);
             заєструватисяToolStripMenuItem.Text = "Зареєструватись";
             // 
-            // Category
-            // 
-            Category.HeaderText = "Категорія";
-            Category.MinimumWidth = 8;
-            Category.Name = "Category";
-            Category.Width = 150;
-            // 
-            // Sum
-            // 
-            Sum.HeaderText = "Сума";
-            Sum.MinimumWidth = 8;
-            Sum.Name = "Sum";
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Дата";
-            Date.MinimumWidth = 8;
-            Date.Name = "Date";
-            // 
-            // Comment
-            // 
-            Comment.HeaderText = "Коментар";
-            Comment.MinimumWidth = 8;
-            Comment.Name = "Comment";
-            Comment.Width = 150;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -201,7 +204,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1079, 499);
+            ClientSize = new Size(1116, 499);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);

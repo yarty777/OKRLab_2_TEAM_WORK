@@ -1,3 +1,5 @@
+using static System.Windows.Forms.DataFormats;
+
 namespace OKRLR_2
 {
     public partial class Form1 : Form
@@ -21,5 +23,11 @@ namespace OKRLR_2
         {
 
         }
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 addForm = new Form2();  
+            addForm.ShowDialog();             
+        }
+
     }
 }
