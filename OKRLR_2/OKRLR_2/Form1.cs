@@ -31,7 +31,7 @@ namespace OKRLR_2
         {
 
         }
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addToolStripMenuItem_Click(object sender, EventArgs e) // я так поняв ми потім сюдою будем вводити наші витрати
         {
             Form2 addForm = new Form2();
             addForm.ShowDialog();
