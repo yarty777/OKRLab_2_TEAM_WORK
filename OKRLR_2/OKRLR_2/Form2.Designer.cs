@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             textBoxSum = new TextBox();
             textBoxComentar = new TextBox();
             label1 = new Label();
@@ -41,6 +42,7 @@
             // 
             // textBoxSum
             // 
+            textBoxSum.BackColor = SystemColors.GradientInactiveCaption;
             textBoxSum.Location = new Point(28, 204);
             textBoxSum.Name = "textBoxSum";
             textBoxSum.Size = new Size(186, 31);
@@ -48,6 +50,7 @@
             // 
             // textBoxComentar
             // 
+            textBoxComentar.BackColor = SystemColors.GradientInactiveCaption;
             textBoxComentar.Location = new Point(28, 356);
             textBoxComentar.Name = "textBoxComentar";
             textBoxComentar.Size = new Size(186, 31);
@@ -56,41 +59,50 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label1.Location = new Point(28, 94);
             label1.Name = "label1";
-            label1.Size = new Size(93, 25);
+            label1.Size = new Size(110, 28);
             label1.TabIndex = 4;
             label1.Text = "Категорія:";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label2.Location = new Point(28, 176);
             label2.Name = "label2";
-            label2.Size = new Size(58, 25);
+            label2.Size = new Size(67, 28);
             label2.TabIndex = 5;
             label2.Text = "Сума:";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label3.Location = new Point(28, 251);
             label3.Name = "label3";
-            label3.Size = new Size(53, 25);
+            label3.Size = new Size(64, 28);
             label3.TabIndex = 6;
             label3.Text = "Дата:";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             label4.Location = new Point(28, 328);
             label4.Name = "label4";
-            label4.Size = new Size(110, 25);
+            label4.Size = new Size(132, 28);
             label4.TabIndex = 7;
             label4.Text = "Коментарій:";
             // 
             // comboBoxCategory
             // 
+            comboBoxCategory.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Location = new Point(28, 122);
             comboBoxCategory.Name = "comboBoxCategory";
@@ -99,6 +111,7 @@
             // 
             // comboBoxDate
             // 
+            comboBoxDate.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxDate.FormattingEnabled = true;
             comboBoxDate.Location = new Point(28, 279);
             comboBoxDate.Name = "comboBoxDate";
@@ -121,6 +134,8 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonHighlight;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(321, 450);
             Controls.Add(label5);
             Controls.Add(comboBoxDate);
@@ -131,6 +146,7 @@
             Controls.Add(label1);
             Controls.Add(textBoxComentar);
             Controls.Add(textBoxSum);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form2";
             Text = "ExpenseTracker";
             ResumeLayout(false);

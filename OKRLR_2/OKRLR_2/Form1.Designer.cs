@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             dataGridView1 = new DataGridView();
             ColumnCategory = new DataGridViewTextBoxColumn();
             ColumnSum = new DataGridViewTextBoxColumn();
@@ -51,15 +52,15 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.BackgroundColor = SystemColors.InactiveCaption;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnCategory, ColumnSum, ColumnDate, ColumnComment });
-            dataGridView1.Location = new Point(150, 65);
+            dataGridView1.Location = new Point(207, 81);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(554, 307);
+            dataGridView1.Size = new Size(761, 384);
             dataGridView1.TabIndex = 0;
             // 
             // ColumnCategory
@@ -92,92 +93,107 @@
             // 
             // comboBoxMonth
             // 
+            comboBoxMonth.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxMonth.FormattingEnabled = true;
             comboBoxMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
-            comboBoxMonth.Location = new Point(13, 109);
+            comboBoxMonth.Location = new Point(18, 136);
             comboBoxMonth.Margin = new Padding(2);
             comboBoxMonth.Name = "comboBoxMonth";
-            comboBoxMonth.Size = new Size(128, 28);
+            comboBoxMonth.Size = new Size(174, 33);
             comboBoxMonth.TabIndex = 1;
             // 
             // comboBoxCategory
             // 
+            comboBoxCategory.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Items.AddRange(new object[] { "Products", "Household chemicals", "Taxes", "Travel", "Fuel", "Devices" });
-            comboBoxCategory.Location = new Point(13, 168);
+            comboBoxCategory.Location = new Point(18, 210);
             comboBoxCategory.Margin = new Padding(2);
             comboBoxCategory.Name = "comboBoxCategory";
-            comboBoxCategory.Size = new Size(128, 28);
+            comboBoxCategory.Size = new Size(174, 33);
             comboBoxCategory.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(13, 86);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label1.Location = new Point(18, 108);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(58, 20);
+            label1.Size = new Size(87, 28);
             label1.TabIndex = 4;
-            label1.Text = "Місяць";
+            label1.Text = "Місяць:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(13, 146);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label2.Location = new Point(18, 182);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(76, 20);
+            label2.Size = new Size(110, 28);
             label2.TabIndex = 5;
-            label2.Text = "Категорія";
+            label2.Text = "Категорія:";
             // 
             // menuStrip1
             // 
             menuStrip1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            menuStrip1.BackColor = SystemColors.InactiveBorder;
+            menuStrip1.BackgroundImage = (Image)resources.GetObject("menuStrip1.BackgroundImage");
             menuStrip1.Dock = DockStyle.None;
+            menuStrip1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 204);
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, увійтиToolStripMenuItem, заєструватисяToolStripMenuItem });
-            menuStrip1.Location = new Point(289, 22);
+            menuStrip1.Location = new Point(476, 30);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(416, 31);
+            menuStrip1.Padding = new Padding(7, 2, 0, 2);
+            menuStrip1.Size = new Size(490, 36);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // addToolStripMenuItem
             // 
-            addToolStripMenuItem.Font = new Font("Segoe UI", 10F);
+            addToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            addToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             addToolStripMenuItem.Name = "addToolStripMenuItem";
-            addToolStripMenuItem.Size = new Size(55, 27);
+            addToolStripMenuItem.Size = new Size(63, 32);
             addToolStripMenuItem.Text = "Add";
             addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
-            editToolStripMenuItem.Font = new Font("Segoe UI", 10F);
+            editToolStripMenuItem.BackColor = SystemColors.InactiveBorder;
+            editToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            editToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(53, 27);
+            editToolStripMenuItem.Size = new Size(61, 32);
             editToolStripMenuItem.Text = "Edit";
             // 
             // deleteToolStripMenuItem
             // 
-            deleteToolStripMenuItem.Font = new Font("Segoe UI", 10F);
+            deleteToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            deleteToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(73, 27);
+            deleteToolStripMenuItem.Size = new Size(83, 32);
             deleteToolStripMenuItem.Text = "Delete";
             // 
             // увійтиToolStripMenuItem
             // 
-            увійтиToolStripMenuItem.Font = new Font("Segoe UI", 10F);
+            увійтиToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            увійтиToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             увійтиToolStripMenuItem.Name = "увійтиToolStripMenuItem";
-            увійтиToolStripMenuItem.Size = new Size(74, 27);
+            увійтиToolStripMenuItem.Size = new Size(83, 32);
             увійтиToolStripMenuItem.Text = "Увійти";
             // 
             // заєструватисяToolStripMenuItem
             // 
-            заєструватисяToolStripMenuItem.Font = new Font("Segoe UI", 10F);
+            заєструватисяToolStripMenuItem.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            заєструватисяToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             заєструватисяToolStripMenuItem.Name = "заєструватисяToolStripMenuItem";
-            заєструватисяToolStripMenuItem.Size = new Size(154, 27);
+            заєструватисяToolStripMenuItem.Size = new Size(191, 32);
             заєструватисяToolStripMenuItem.Text = "Зареєструватись";
             // 
             // label4
@@ -185,29 +201,33 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label4.Location = new Point(13, 7);
+            label4.Location = new Point(18, 9);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(284, 46);
+            label4.Size = new Size(331, 54);
             label4.TabIndex = 8;
             label4.Text = "ExpenseTracker";
             label4.Click += label4_Click;
             // 
             // buttonFindExpensive
             // 
-            buttonFindExpensive.Location = new Point(6, 316);
+            buttonFindExpensive.BackColor = SystemColors.InactiveCaptionText;
+            buttonFindExpensive.ForeColor = SystemColors.ButtonHighlight;
+            buttonFindExpensive.Location = new Point(9, 395);
+            buttonFindExpensive.Margin = new Padding(4);
             buttonFindExpensive.Name = "buttonFindExpensive";
-            buttonFindExpensive.Size = new Size(139, 30);
+            buttonFindExpensive.Size = new Size(191, 38);
             buttonFindExpensive.TabIndex = 9;
             buttonFindExpensive.Text = "Пошук витрат";
-            buttonFindExpensive.UseVisualStyleBackColor = true;
+            buttonFindExpensive.UseVisualStyleBackColor = false;
             buttonFindExpensive.Click += buttonFindExpensive_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(709, 383);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(975, 479);
             Controls.Add(buttonFindExpensive);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -216,6 +236,8 @@
             Controls.Add(comboBoxMonth);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(2);
             Name = "Form1";
