@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 
@@ -16,6 +17,21 @@ namespace OKRLR_2
             public double Suma { get; set; }
             public string Date { get; set; }
             public string Comentar { get; set; }
+
+            public Expense()
+            {
+                Category = "Products";
+                Suma = 0;
+                Date = "01.01.2025";
+                Comentar = "---";
+            }
+            public Expense(string ca,double s,string d,string co)
+            {
+                Category = ca;
+                Suma = s;
+                Date = d;
+                Comentar = co;
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
