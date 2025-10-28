@@ -8,23 +8,21 @@ namespace OKRLR_2
 {
     public class Acount
     {
-        string EmailAcount;
-        string SurnameAcount;
-        string NameAcount;
-        string PaswordAcount;
+        public string? Id { get; set; }
+        string EmailAcount { get; set; }
+        string NicknameAcount { get; set; }
+        string PaswordAcount { get; set; }
 
         public Acount()
         {
             EmailAcount = "---";
-            SurnameAcount = "---";
-            NameAcount = "---";
+            NicknameAcount = "---";
             PaswordAcount = "---";
         }
-        public Acount(string em, string su,  string na, string pa)
+        public Acount(string em, string ni, string pa)
         {
             EmailAcount = em;
-            SurnameAcount = su;
-            NameAcount =na;
+            NicknameAcount = ni;
             PaswordAcount = pa;
         }
     }

@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
-
+using MongoDB.Driver;
 namespace OKRLR_2
 {
     public partial class Form1 : Form
@@ -11,28 +11,7 @@ namespace OKRLR_2
             InitializeComponent();
         }
         string filePath = Path.Combine(Application.StartupPath, "expenses.txt");
-        private class Expense
-        {
-            public string Category { get; set; }
-            public double Suma { get; set; }
-            public string Date { get; set; }
-            public string Comentar { get; set; }
-
-            public Expense()
-            {
-                Category = "Products";
-                Suma = 0;
-                Date = "01.01.2025";
-                Comentar = "---";
-            }
-            public Expense(string ca,double s,string d,string co)
-            {
-                Category = ca;
-                Suma = s;
-                Date = d;
-                Comentar = co;
-            }
-        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -123,7 +102,7 @@ namespace OKRLR_2
             double total = 0;
             for (int i = 0; i < filtered.Count; i++)
             {
-                total += filtered[i].Suma;
+                total += double.Parse(filtered[i].Suma);
             }
 
             // Оновлення таблиці
@@ -132,7 +111,7 @@ namespace OKRLR_2
             {
                 dataGridView1.Rows.Add(
                     filtered[i].Category,
-                    filtered[i].Suma.ToString("F2"),
+                    filtered[i].Suma,
                     filtered[i].Date,
                     filtered[i].Comentar
                 );
@@ -157,7 +136,7 @@ namespace OKRLR_2
 
                 Expense exp = new Expense();
                 exp.Category = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                exp.Suma = double.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                exp.Suma = dataGridView1.Rows[i].Cells[1].Value.ToString();
                 exp.Date = dataGridView1.Rows[i].Cells[2].Value.ToString();
                 exp.Comentar = dataGridView1.Rows[i].Cells[3].Value.ToString();
 
