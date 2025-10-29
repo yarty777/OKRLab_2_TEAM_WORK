@@ -187,6 +187,7 @@
             увійтиToolStripMenuItem.Name = "увійтиToolStripMenuItem";
             увійтиToolStripMenuItem.Size = new Size(83, 32);
             увійтиToolStripMenuItem.Text = "Увійти";
+            увійтиToolStripMenuItem.Click += увійтиToolStripMenuItem_Click;
             // 
             // заєструватисяToolStripMenuItem
             // 
@@ -195,6 +196,7 @@
             заєструватисяToolStripMenuItem.Name = "заєструватисяToolStripMenuItem";
             заєструватисяToolStripMenuItem.Size = new Size(191, 32);
             заєструватисяToolStripMenuItem.Text = "Зареєструватись";
+            заєструватисяToolStripMenuItem.Click += заєструватисяToolStripMenuItem_Click;
             // 
             // label4
             // 

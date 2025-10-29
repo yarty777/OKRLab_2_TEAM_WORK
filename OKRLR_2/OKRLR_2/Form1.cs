@@ -96,7 +96,18 @@ namespace OKRLR_2
             }
 
         }
+        private void óâ³éòèToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login form2 = new Login();
+            form2.Show();              
+           
+        }
+        private void çàºñòğóâàòèñÿToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Register form2 = new Register();
+            form2.Show();
 
+        }
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)

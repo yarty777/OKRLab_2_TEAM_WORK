@@ -91,6 +91,7 @@ public class MongoService
     }
 
 }
+
 public static class AppSession
 {
     public static string CurrentUserId { get; set; } = "000000000000000000000001";
