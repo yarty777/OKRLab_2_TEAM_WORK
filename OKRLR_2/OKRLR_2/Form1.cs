@@ -69,62 +69,7 @@ namespace OKRLR_2
                 return;
             }
 
-            // Зчитування витрат з файлу
-            List<Expense> expenses = ReadExpensesFromFile();
-
-            List<Expense> filtered = new List<Expense>();
-
-            // Фільтруємо вручну
-            for (int i = 0; i < expenses.Count; i++)
-            {
-                bool monthMatch = true;
-                bool categoryMatch = true;
-
-                if (selectedMonth != "")
-                {
-                    int month = MonthNumber(selectedMonth);
-                    DateTime expenseDate = DateTime.Parse(expenses[i].Date);
-                    int expenseMonth = expenseDate.Month;
-                    if (month != expenseMonth)
-                    {
-                        monthMatch = false;
-                    }
-                }
-
-                if (selectedCategory != "")
-                {
-                    if (expenses[i].Category != selectedCategory)
-                    {
-                        categoryMatch = false;
-                    }
-                }
-
-                if (monthMatch && categoryMatch)
-                {
-                    filtered.Add(expenses[i]);
-                }
-            }
-
-            // Обчислення суми
-            double total = 0;
-            for (int i = 0; i < filtered.Count; i++)
-            {
-                total += double.Parse(filtered[i].Suma);
-            }
-
-            // Оновлення таблиці
-            dataGridView1.Rows.Clear();
-            for (int i = 0; i < filtered.Count; i++)
-            {
-                dataGridView1.Rows.Add(
-                    filtered[i].Category,
-                    filtered[i].Suma,
-                    filtered[i].Date,
-                    filtered[i].Comentar
-                );
-            }
-
-            MessageBox.Show("Загальні витрати: " + total.ToString("F2") + " грн", "Результат");
+          
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {

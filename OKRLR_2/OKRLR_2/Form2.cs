@@ -30,7 +30,7 @@ namespace OKRLR_2
             
             
             
-            mongoService.InsertData(category, suma, date, comment);//це команда для збереження у монгодб
+           
         }
     }
 }

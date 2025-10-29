@@ -59,5 +59,16 @@ namespace OKRLR_2.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_abstract_relief_texture_crafted_from_wood_stone_or_alternative_materials_png_image_12227775 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-abstract-relief-texture-crafted-from-wood-stone-or-alternative-materials-" +
+                        "png-image_12227775", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
