@@ -143,9 +143,6 @@ namespace OKRLR_2
                 list.Add(exp);
             }
 
-            SaveExpensesToFile(list);
-
-            MessageBox.Show("Зміни збережено у файл!");
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,59 +154,6 @@ namespace OKRLR_2
             }
 
             int index = dataGridView1.SelectedRows[0].Index;
-
-            // Зчитуємо всі записи
-            List<Expense> expenses = ReadExpensesFromFile();
-
-            if (index >= 0 && index < expenses.Count)
-            {
-                expenses.RemoveAt(index);
-                SaveExpensesToFile(expenses);
-
-                dataGridView1.Rows.RemoveAt(index);
-
-                MessageBox.Show("Запис успішно видалено!");
-            }
         }
-        // методи
-        private List<Expense> ReadExpensesFromFile()
-        {
-            List<Expense> list = new List<Expense>();
-
-            if (!File.Exists(filePath))
-                return list;
-
-            string[] lines = File.ReadAllLines(filePath);
-            for (int i = 0; i < lines.Length; i++)
-            {
-                string[] parts = lines[i].Split(';');
-                if (parts.Length >= 4)
-                {
-                    Expense exp = new Expense();
-                    exp.Category = parts[0];
-                    exp.Suma = double.Parse(parts[1]);
-                    exp.Date = parts[2];
-                    exp.Comentar = parts[3];
-                    list.Add(exp);
-                }
-            }
-
-            return list;
-        }
-        private void SaveExpensesToFile(List<Expense> list)
-        {
-            string[] lines = new string[list.Count];
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                lines[i] = list[i].Category + " " +
-                           list[i].Suma.ToString() + " " +
-                           list[i].Date + " " +
-                           list[i].Comentar;
-            }
-
-            File.WriteAllLines(filePath, lines);
-        }
-
     }
 }

@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|solutionrelative:okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|d:\\okr_lr2\\okrlr_2\\okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|D:\\OKR_LR2\\OKRLR_2\\okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{10B366F3-858E-41CD-B5E2-DF0DF2420116}|OKRLR_2\\OKRLR_2.csproj|solutionrelative:okrlr_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -50,8 +50,7 @@
               "RelativeToolTip": "OKRLR_2\\Models\\Expense.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAcwFAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T22:59:43.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-28T22:59:43.479Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "OKRLR_2\\Models\\Account.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T06:45:24.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T06:45:24.438Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "OKRLR_2\\Form2.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T05:51:21.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-20T05:51:21.135Z"
             },
             {
               "$type": "Document",
@@ -88,8 +85,7 @@
               "ToolTip": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form2.cs [Design]",
               "RelativeToolTip": "OKRLR_2\\Form2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T05:49:54.941Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-20T05:49:54.941Z"
             },
             {
               "$type": "Document",
@@ -99,7 +95,7 @@
               "RelativeDocumentMoniker": "OKRLR_2\\Form1.cs",
               "ToolTip": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form1.cs",
               "RelativeToolTip": "OKRLR_2\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAmwH8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T07:39:39.15Z",
               "EditorCaption": ""
@@ -113,8 +109,7 @@
               "ToolTip": "D:\\OKR_LR2\\OKRLR_2\\OKRLR_2\\Form1.cs [Design]",
               "RelativeToolTip": "OKRLR_2\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T10:10:23.184Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-15T10:10:23.184Z"
             }
           ]
         }
