@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,16 +22,59 @@ namespace OKRLR_2
             InitializeComponent();
             mongoService = service;
         }
-
+        private int CategoryNumber(string category)
+        {
+            switch (category)
+            {
+                case "Products": return 1;
+                case "Household chemicals": return 2;
+                case "Taxes": return 3;
+                case "Travel": return 4;
+                case "Fuel": return 5;
+                case "Devices": return 6;
+                default: return 0;
+            }
+        }
         private void buttonsave_Click(object sender, EventArgs e)
         {
             //зроби тут щоб зберігалося можеш скористатися try catch щоб не було багато помилок
-            
-            
-            
-            
-            
-           
+            if (comboBoxCategory.Text == "" || textBoxSum.Text == "" ||
+         comboBoxDate.Text == "" || textBoxComentar.Text == "")
+            {
+                MessageBox.Show("Заповніть усі поля!");
+                return;
+            }
+            if (!double.TryParse(textBoxSum.Text, out double suma))
+            {
+                MessageBox.Show("Оклад повинен бути числом!");
+                return;
+            }
+            if (suma < 0)
+            {
+                MessageBox.Show("Оклад не може бути меншим за 0!");
+                return;
+            }
+            try
+            {
+                // Викликаємо сервіс для запису в MongoDB
+                mongoService.InsertData(
+                    comboBoxCategory.Text,
+                    suma.ToString(),
+                    comboBoxDate.Text,
+                    textBoxComentar.Text
+                );
+
+                MessageBox.Show("Дані успішно збережено!");
+                // Очистка полів форми після збереження
+                comboBoxCategory.SelectedIndex = -1;
+                textBoxSum.Clear();
+                comboBoxDate.SelectedIndex = -1;
+                textBoxComentar.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка при збереженні: " + ex.Message);
+            }
         }
     }
 }

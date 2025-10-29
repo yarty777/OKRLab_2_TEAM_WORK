@@ -11,12 +11,21 @@ namespace OKRLR_2
         {
             InitializeComponent();
             mongoService = new MongoService();
+            LoadData();
         }
-        string filePath = Path.Combine(Application.StartupPath, "expenses.txt");
         private void LoadData()
         {
+            dataGridView1.Rows.Clear();
             var data = mongoService.GetCurrentUserData();
-            dataGridView1.DataSource = data;
+            foreach (var expense in data)
+            {
+                dataGridView1.Rows.Add(
+                    expense.Category,
+                    expense.Suma,
+                    expense.Date,
+                    expense.Comentar
+                );
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -36,7 +45,7 @@ namespace OKRLR_2
         {
             Form2 addForm = new Form2(mongoService);
             addForm.ShowDialog();
-
+            LoadData();
         }
         private int MonthNumber(string month)
         {
@@ -60,7 +69,7 @@ namespace OKRLR_2
         // кнопки
         private void buttonFindExpensive_Click(object sender, EventArgs e)
         {
-            string selectedMonth = comboBoxMonth.Text;
+            string selectedMonth = comboBoxMonth.Text;       
             string selectedCategory = comboBoxCategory.Text;
 
             if (string.IsNullOrEmpty(selectedMonth) && string.IsNullOrEmpty(selectedCategory))
@@ -69,7 +78,42 @@ namespace OKRLR_2
                 return;
             }
 
-          
+            try
+            {
+                var allExpenses = mongoService.GetCurrentUserData(); // отримуємо дані користувача
+
+                // фільтрація
+                var filtered = allExpenses.AsEnumerable();
+
+                if (!string.IsNullOrEmpty(selectedMonth))
+                {
+                    filtered = filtered.Where(e => e.Date.Split('.')[1] == selectedMonth);
+                }
+
+                if (!string.IsNullOrEmpty(selectedCategory))
+                {
+                    filtered = filtered.Where(e => e.Category == selectedCategory);
+                }
+                dataGridView1.Rows.Clear();
+                foreach (var expense in filtered)
+                {
+                    dataGridView1.Rows.Add(
+                        expense.Category,
+                        expense.Suma,
+                        expense.Date,
+                        expense.Comentar
+                    );
+                }
+
+                if (!filtered.Any())
+                {
+                    MessageBox.Show("Витрат за обраними параметрами не знайдено.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка при пошуку: " + ex.Message);
+            }
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
