@@ -11,12 +11,21 @@ namespace OKRLR_2
         {
             InitializeComponent();
             mongoService = new MongoService();
+            LoadData();
         }
-        string filePath = Path.Combine(Application.StartupPath, "expenses.txt");
         private void LoadData()
         {
+            dataGridView1.Rows.Clear();
             var data = mongoService.GetCurrentUserData();
-            dataGridView1.DataSource = data;
+            foreach (var expense in data)
+            {
+                dataGridView1.Rows.Add(
+                    expense.Category,
+                    expense.Suma,
+                    expense.Date,
+                    expense.Comentar
+                );
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -36,7 +45,7 @@ namespace OKRLR_2
         {
             Form2 addForm = new Form2(mongoService);
             addForm.ShowDialog();
-
+            LoadData();
         }
         private int MonthNumber(string month)
         {
