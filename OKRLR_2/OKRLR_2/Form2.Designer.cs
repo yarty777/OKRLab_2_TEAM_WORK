@@ -45,7 +45,7 @@
             // 
             textBoxSum.BackColor = SystemColors.GradientInactiveCaption;
             textBoxSum.Location = new Point(22, 163);
-            textBoxSum.Margin = new Padding(2, 2, 2, 2);
+            textBoxSum.Margin = new Padding(2);
             textBoxSum.Name = "textBoxSum";
             textBoxSum.Size = new Size(150, 27);
             textBoxSum.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             textBoxComentar.BackColor = SystemColors.GradientInactiveCaption;
             textBoxComentar.Location = new Point(22, 285);
-            textBoxComentar.Margin = new Padding(2, 2, 2, 2);
+            textBoxComentar.Margin = new Padding(2);
             textBoxComentar.Name = "textBoxComentar";
             textBoxComentar.Size = new Size(150, 27);
             textBoxComentar.TabIndex = 3;
@@ -111,8 +111,9 @@
             // 
             comboBoxCategory.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxCategory.FormattingEnabled = true;
+            comboBoxCategory.Items.AddRange(new object[] { "Products", "Household chemicals", "Taxes", "Travel", "Fuel", "Devices" });
             comboBoxCategory.Location = new Point(22, 98);
-            comboBoxCategory.Margin = new Padding(2, 2, 2, 2);
+            comboBoxCategory.Margin = new Padding(2);
             comboBoxCategory.Name = "comboBoxCategory";
             comboBoxCategory.Size = new Size(146, 28);
             comboBoxCategory.TabIndex = 8;
@@ -122,7 +123,7 @@
             comboBoxDate.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxDate.FormattingEnabled = true;
             comboBoxDate.Location = new Point(22, 223);
-            comboBoxDate.Margin = new Padding(2, 2, 2, 2);
+            comboBoxDate.Margin = new Padding(2);
             comboBoxDate.Name = "comboBoxDate";
             comboBoxDate.Size = new Size(146, 28);
             comboBoxDate.TabIndex = 9;
@@ -167,7 +168,7 @@
             Controls.Add(textBoxComentar);
             Controls.Add(textBoxSum);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Form2";
             Text = "ExpenseTracker";
             ResumeLayout(false);
