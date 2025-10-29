@@ -6,12 +6,18 @@ namespace OKRLR_2
 {
     public partial class Form1 : Form
     {
+        private MongoService mongoService;
         public Form1()
         {
             InitializeComponent();
+            mongoService = new MongoService();
         }
         string filePath = Path.Combine(Application.StartupPath, "expenses.txt");
-        
+        private void LoadData()
+        {
+            var data = mongoService.GetCurrentUserData();
+            dataGridView1.DataSource = data;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -28,8 +34,9 @@ namespace OKRLR_2
         }
         private void addToolStripMenuItem_Click(object sender, EventArgs e) // я так поняв ми потім сюдою будем вводити наші витрати
         {
-            Form2 addForm = new Form2();
+            Form2 addForm = new Form2(mongoService);
             addForm.ShowDialog();
+
         }
         private int MonthNumber(string month)
         {

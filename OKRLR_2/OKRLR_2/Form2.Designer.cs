@@ -38,22 +38,25 @@
             comboBoxCategory = new ComboBox();
             comboBoxDate = new ComboBox();
             label5 = new Label();
+            buttonsave = new Button();
             SuspendLayout();
             // 
             // textBoxSum
             // 
             textBoxSum.BackColor = SystemColors.GradientInactiveCaption;
-            textBoxSum.Location = new Point(28, 204);
+            textBoxSum.Location = new Point(22, 163);
+            textBoxSum.Margin = new Padding(2, 2, 2, 2);
             textBoxSum.Name = "textBoxSum";
-            textBoxSum.Size = new Size(186, 31);
+            textBoxSum.Size = new Size(150, 27);
             textBoxSum.TabIndex = 1;
             // 
             // textBoxComentar
             // 
             textBoxComentar.BackColor = SystemColors.GradientInactiveCaption;
-            textBoxComentar.Location = new Point(28, 356);
+            textBoxComentar.Location = new Point(22, 285);
+            textBoxComentar.Margin = new Padding(2, 2, 2, 2);
             textBoxComentar.Name = "textBoxComentar";
-            textBoxComentar.Size = new Size(186, 31);
+            textBoxComentar.Size = new Size(150, 27);
             textBoxComentar.TabIndex = 3;
             // 
             // label1
@@ -61,9 +64,10 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label1.Location = new Point(28, 94);
+            label1.Location = new Point(22, 75);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(110, 28);
+            label1.Size = new Size(95, 23);
             label1.TabIndex = 4;
             label1.Text = "Категорія:";
             // 
@@ -72,9 +76,10 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(28, 176);
+            label2.Location = new Point(22, 141);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(67, 28);
+            label2.Size = new Size(57, 23);
             label2.TabIndex = 5;
             label2.Text = "Сума:";
             // 
@@ -83,9 +88,10 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label3.Location = new Point(28, 251);
+            label3.Location = new Point(22, 201);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(64, 28);
+            label3.Size = new Size(54, 23);
             label3.TabIndex = 6;
             label3.Text = "Дата:";
             // 
@@ -94,9 +100,10 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label4.Location = new Point(28, 328);
+            label4.Location = new Point(22, 262);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(132, 28);
+            label4.Size = new Size(112, 23);
             label4.TabIndex = 7;
             label4.Text = "Коментарій:";
             // 
@@ -104,18 +111,20 @@
             // 
             comboBoxCategory.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxCategory.FormattingEnabled = true;
-            comboBoxCategory.Location = new Point(28, 122);
+            comboBoxCategory.Location = new Point(22, 98);
+            comboBoxCategory.Margin = new Padding(2, 2, 2, 2);
             comboBoxCategory.Name = "comboBoxCategory";
-            comboBoxCategory.Size = new Size(182, 33);
+            comboBoxCategory.Size = new Size(146, 28);
             comboBoxCategory.TabIndex = 8;
             // 
             // comboBoxDate
             // 
             comboBoxDate.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxDate.FormattingEnabled = true;
-            comboBoxDate.Location = new Point(28, 279);
+            comboBoxDate.Location = new Point(22, 223);
+            comboBoxDate.Margin = new Padding(2, 2, 2, 2);
             comboBoxDate.Name = "comboBoxDate";
-            comboBoxDate.Size = new Size(182, 33);
+            comboBoxDate.Size = new Size(146, 28);
             comboBoxDate.TabIndex = 9;
             // 
             // label5
@@ -123,20 +132,31 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label5.Location = new Point(28, 24);
+            label5.Location = new Point(22, 19);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(113, 54);
+            label5.Size = new Size(98, 46);
             label5.TabIndex = 10;
             label5.Text = "ADD";
             // 
+            // buttonsave
+            // 
+            buttonsave.Location = new Point(22, 332);
+            buttonsave.Name = "buttonsave";
+            buttonsave.Size = new Size(149, 37);
+            buttonsave.TabIndex = 11;
+            buttonsave.Text = "Save";
+            buttonsave.UseVisualStyleBackColor = true;
+            buttonsave.Click += buttonsave_Click;
+            // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(321, 450);
+            ClientSize = new Size(214, 390);
+            Controls.Add(buttonsave);
             Controls.Add(label5);
             Controls.Add(comboBoxDate);
             Controls.Add(comboBoxCategory);
@@ -147,6 +167,7 @@
             Controls.Add(textBoxComentar);
             Controls.Add(textBoxSum);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form2";
             Text = "ExpenseTracker";
             ResumeLayout(false);
@@ -163,5 +184,6 @@
         private ComboBox comboBoxCategory;
         private ComboBox comboBoxDate;
         private Label label5;
+        private Button buttonsave;
     }
 }

@@ -17,7 +17,7 @@ namespace OKRLR_2
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
         [BsonElement("custoner_id")]
-        public string CustomerID { get; set; }
+        public string CustomerID { get; set; } = "000000000000000000000001";
         [BsonElement("Category")]
         public string Category { get; set; }
         [BsonElement("Suma")]
@@ -62,16 +62,16 @@ public class MongoService
     }
 
     // Запис даних
-    public void InsertData(string customerID, string category,string suma,string date,string comentar)
+    public void InsertData(string category, string suma, string date, string comentar)
     {
         var collection = GetCollection();
         var newExpense = new Expense
         {
-            CustomerID = customerID,
-            Category= category,
+            CustomerID = AppSession.CurrentUserId, // завжди один і той самий користувач
+            Category = category,
             Suma = suma,
-            Date= date,
-            Comentar= comentar
+            Date = date,
+            Comentar = comentar
         };
         collection.InsertOne(newExpense);
     }
@@ -84,9 +84,15 @@ public class MongoService
     }
 
     // Читання вибірково за умовою (наприклад, всі, де Age > 20)
-    public List<Expense> GetDataCustomerId(string customerid)
+    public List<Expense> GetCurrentUserData()
     {
         var collection = GetCollection();
-        return collection.Find(d => d.CustomerID == customerid).ToList();
+        return collection.Find(d => d.CustomerID == AppSession.CurrentUserId).ToList();
     }
+
 }
+public static class AppSession
+{
+    public static string CurrentUserId { get; set; } = "000000000000000000000001";
+}
+
