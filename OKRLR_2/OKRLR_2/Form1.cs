@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using MongoDB.Driver;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
@@ -6,6 +7,13 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.DataFormats;
+=======
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
+using MongoDB.Driver;
+using System.Text;
+>>>>>>> danja
 namespace OKRLR_2
 {
     public partial class Form1 : Form
@@ -49,7 +57,7 @@ namespace OKRLR_2
         {
 
         }
-        private void addToolStripMenuItem_Click(object sender, EventArgs e) // � ��� ����� �� ���� ����� ����� ������� ���� �������
+        private void addToolStripMenuItem_Click(object sender, EventArgs e) // я так поняв ми потім сюдою будем вводити наші витрати
         {
             Form2 addForm = new Form2(mongoService);
             addForm.ShowDialog();
@@ -74,7 +82,7 @@ namespace OKRLR_2
                 default: return 0;
             }
         }
-        // ������
+        // кнопки
         private void buttonFindExpensive_Click(object sender, EventArgs e)
         {
             string selectedMonth = comboBoxMonth.Text;
@@ -82,15 +90,15 @@ namespace OKRLR_2
 
             if (string.IsNullOrEmpty(selectedMonth) && string.IsNullOrEmpty(selectedCategory))
             {
-                MessageBox.Show("������� ����� ��� ��������!");
+                MessageBox.Show("Виберіть місяць або категорію!");
                 return;
             }
 
             try
             {
-                var allExpenses = mongoService.GetCurrentUserData(); // �������� ���� �����������
+                var allExpenses = mongoService.GetCurrentUserData(); // отримуємо дані користувача
 
-                // ����������
+                // фільтрація
                 var filtered = allExpenses.AsEnumerable();
 
                 if (!string.IsNullOrEmpty(selectedMonth))
@@ -115,19 +123,19 @@ namespace OKRLR_2
 
                 if (!filtered.Any())
                 {
-                    MessageBox.Show("������ �� �������� ����������� �� ��������.");
+                    MessageBox.Show("Витрат за обраними параметрами не знайдено.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("������� ��� ������: " + ex.Message);
+                MessageBox.Show("Помилка при пошуку: " + ex.Message);
             }
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 0)
             {
-                MessageBox.Show("���� ����� ��� �����������!");
+                MessageBox.Show("Немає даних для редагування!");
                 return;
             }
 
@@ -148,13 +156,13 @@ namespace OKRLR_2
             }
 
         }
-        private void �����ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void увійтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login form2 = new Login();
             form2.Show();
 
         }
-        private void ������������ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void заєструватисяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Register form2 = new Register();
             form2.Show();
@@ -164,12 +172,13 @@ namespace OKRLR_2
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("������� ����� ��� ���������!");
+                MessageBox.Show("Виберіть рядок для видалення!");
                 return;
             }
 
             int index = dataGridView1.SelectedRows[0].Index;
         }
+<<<<<<< HEAD
 
         private void editToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -253,5 +262,61 @@ namespace OKRLR_2
                 }
             }
         }
+=======
+        private void buttonStats_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var data = mongoService.GetCurrentUserData();
+                if (data == null || data.Count == 0)
+                {
+                    MessageBox.Show("Немає даних для аналізу!");
+                    return;
+                }
+
+                // Групуємо витрати по місяцях
+                var monthly = new Dictionary<int, double>();
+
+                foreach (var exp in data)
+                {
+                    if (DateTime.TryParse(exp.Date, out DateTime date) &&
+                        double.TryParse(exp.Suma, out double amount))
+                    {
+                        int month = date.Month;
+                        if (!monthly.ContainsKey(month))
+                            monthly[month] = 0;
+                        monthly[month] += amount;
+                    }
+                }
+
+                string[] monthNames = {
+            "Січень","Лютий","Березень","Квітень","Травень","Червень",
+            "Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"
+        };
+
+                double total = 0;
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("📊 Витрати за 2025 рік:\n");
+
+                for (int i = 1; i <= 12; i++)
+                {
+                    double sum = monthly.ContainsKey(i) ? monthly[i] : 0;
+                    sb.AppendLine($"{monthNames[i - 1]}: {sum:F2} ₴");
+                    total += sum;
+                }
+
+                double avg = total / 12;
+                sb.AppendLine($"\nЗагальна сума: {total:F2} ₴");
+                sb.AppendLine($"Середні витрати на місяць: {avg:F2} ₴");
+
+                MessageBox.Show(sb.ToString(), "Статистика витрат");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка під час обчислення статистики: " + ex.Message);
+            }
+        }
+
+>>>>>>> danja
     }
 }
