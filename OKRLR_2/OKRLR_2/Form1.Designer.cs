@@ -46,6 +46,7 @@
             заєструватисяToolStripMenuItem = new ToolStripMenuItem();
             label4 = new Label();
             buttonFindExpensive = new Button();
+            buttonStats = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -60,7 +61,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(761, 384);
+            dataGridView1.Size = new Size(633, 384);
             dataGridView1.TabIndex = 0;
             // 
             // ColumnCategory
@@ -146,7 +147,7 @@
             menuStrip1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 204);
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, увійтиToolStripMenuItem, заєструватисяToolStripMenuItem });
-            menuStrip1.Location = new Point(476, 30);
+            menuStrip1.Location = new Point(350, 27);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
             menuStrip1.Size = new Size(490, 36);
@@ -215,21 +216,35 @@
             // 
             buttonFindExpensive.BackColor = SystemColors.InactiveCaptionText;
             buttonFindExpensive.ForeColor = SystemColors.ButtonHighlight;
-            buttonFindExpensive.Location = new Point(9, 395);
+            buttonFindExpensive.Location = new Point(18, 317);
             buttonFindExpensive.Margin = new Padding(4);
             buttonFindExpensive.Name = "buttonFindExpensive";
-            buttonFindExpensive.Size = new Size(191, 38);
+            buttonFindExpensive.Size = new Size(174, 38);
             buttonFindExpensive.TabIndex = 9;
             buttonFindExpensive.Text = "Пошук витрат";
             buttonFindExpensive.UseVisualStyleBackColor = false;
             buttonFindExpensive.Click += buttonFindExpensive_Click;
+            // 
+            // buttonStats
+            // 
+            buttonStats.BackColor = SystemColors.InactiveCaptionText;
+            buttonStats.ForeColor = SystemColors.ButtonHighlight;
+            buttonStats.Location = new Point(18, 387);
+            buttonStats.Margin = new Padding(4);
+            buttonStats.Name = "buttonStats";
+            buttonStats.Size = new Size(174, 38);
+            buttonStats.TabIndex = 10;
+            buttonStats.Text = "Статистика";
+            buttonStats.UseVisualStyleBackColor = false;
+            buttonStats.Click += buttonStats_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(975, 479);
+            ClientSize = new Size(889, 479);
+            Controls.Add(buttonStats);
             Controls.Add(buttonFindExpensive);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -271,5 +286,6 @@
         private DataGridViewTextBoxColumn ColumnSum;
         private DataGridViewTextBoxColumn ColumnDate;
         private DataGridViewTextBoxColumn ColumnComment;
+        private Button buttonStats;
     }
 }
