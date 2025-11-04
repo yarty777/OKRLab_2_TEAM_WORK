@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+﻿
 using MongoDB.Driver;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
@@ -7,13 +7,9 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.DataFormats;
-=======
-﻿using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
-using MongoDB.Driver;
 using System.Text;
->>>>>>> danja
+
 namespace OKRLR_2
 {
     public partial class Form1 : Form
@@ -57,7 +53,7 @@ namespace OKRLR_2
         {
 
         }
-        private void addToolStripMenuItem_Click(object sender, EventArgs e) // я так поняв ми потім сюдою будем вводити наші витрати
+        private void addToolStripMenuItem_Click(object sender, EventArgs e) //  я так поняв ми потім сюдою будем вводити наші витрати
         {
             Form2 addForm = new Form2(mongoService);
             addForm.ShowDialog();
@@ -131,60 +127,13 @@ namespace OKRLR_2
                 MessageBox.Show("Помилка при пошуку: " + ex.Message);
             }
         }
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("Немає даних для редагування!");
-                return;
-            }
 
-            List<Expense> list = new List<Expense>();
-
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if (dataGridView1.Rows[i].IsNewRow)
-                    continue;
-
-                Expense exp = new Expense();
-                exp.Category = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                exp.Suma = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                exp.Date = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                exp.Comentar = dataGridView1.Rows[i].Cells[3].Value.ToString();
-
-                list.Add(exp);
-            }
-
-        }
-        private void увійтиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Login form2 = new Login();
-            form2.Show();
-
-        }
-        private void заєструватисяToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Register form2 = new Register();
-            form2.Show();
-
-        }
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Виберіть рядок для видалення!");
-                return;
-            }
-
-            int index = dataGridView1.SelectedRows[0].Index;
-        }
-<<<<<<< HEAD
 
         private void editToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("������� ����� ��� �����������!");
+                MessageBox.Show("Виберіть рядок для редагування!");
                 return;
             }
 
@@ -193,7 +142,7 @@ namespace OKRLR_2
             string id = row.Cells["ColumnId"].Value?.ToString();
             if (string.IsNullOrEmpty(id))
             {
-                MessageBox.Show("�� �������� Id ������!");
+                MessageBox.Show("Не знайдено Id запису!");
                 return;
             }
 
@@ -202,11 +151,11 @@ namespace OKRLR_2
             string date = row.Cells["ColumnDate"].Value?.ToString() ?? "";
             string comment = row.Cells["ColumnComment"].Value?.ToString() ?? "";
 
-            // ����������� ����� InputBox
-            category = Microsoft.VisualBasic.Interaction.InputBox("��������:", "�����������", category);
-            suma = Microsoft.VisualBasic.Interaction.InputBox("����:", "�����������", suma);
-            date = Microsoft.VisualBasic.Interaction.InputBox("����:", "�����������", date);
-            comment = Microsoft.VisualBasic.Interaction.InputBox("��������:", "�����������", comment);
+            // Редагування через InputBox
+            category = Microsoft.VisualBasic.Interaction.InputBox("Категорія:", "Редагування", category);
+            suma = Microsoft.VisualBasic.Interaction.InputBox("Сума:", "Редагування", suma);
+            date = Microsoft.VisualBasic.Interaction.InputBox("Дата:", "Редагування", date);
+            comment = Microsoft.VisualBasic.Interaction.InputBox("Коментар:", "Редагування", comment);
 
             var updatedExpense = new Expense
             {
@@ -221,12 +170,12 @@ namespace OKRLR_2
             try
             {
                 mongoService.UpdateExpense(updatedExpense);
-                MessageBox.Show("���� ������ ��������!");
+                MessageBox.Show("Дані успішно оновлені!");
                 LoadData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("������� ��� ���������: " + ex.Message);
+                MessageBox.Show("Помилка при оновленні: " + ex.Message);
             }
         }
 
@@ -234,7 +183,7 @@ namespace OKRLR_2
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("������� ����� ��� ���������!");
+                MessageBox.Show("Виберіть рядок для видалення!");
                 return;
             }
 
@@ -243,26 +192,26 @@ namespace OKRLR_2
 
             if (string.IsNullOrEmpty(id))
             {
-                MessageBox.Show("�� �������� Id ������!");
+                MessageBox.Show("Не знайдено Id запису!");
                 return;
             }
 
-            if (MessageBox.Show("�� ��������, �� ������ �������� ��� �����?",
-                "ϳ�����������", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Ви впевнені, що хочете видалити цей запис?",
+                "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
                 {
                     mongoService.DeleteExpense(id);
-                    MessageBox.Show("����� ������ ��������!");
+                    MessageBox.Show("Запис успішно видалено!");
                     LoadData();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("������� ��� ���������: " + ex.Message);
+                    MessageBox.Show("Помилка при видаленні: " + ex.Message);
                 }
             }
         }
-=======
+
         private void buttonStats_Click(object sender, EventArgs e)
         {
             try
@@ -290,8 +239,8 @@ namespace OKRLR_2
                 }
 
                 string[] monthNames = {
-            "Січень","Лютий","Березень","Квітень","Травень","Червень",
-            "Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"
+             "Січень","Лютий","Березень","Квітень","Травень","Червень",
+                    "Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"
         };
 
                 double total = 0;
@@ -317,6 +266,5 @@ namespace OKRLR_2
             }
         }
 
->>>>>>> danja
     }
 }

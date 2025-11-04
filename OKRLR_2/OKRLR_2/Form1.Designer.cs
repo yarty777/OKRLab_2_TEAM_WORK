@@ -43,8 +43,6 @@
             addToolStripMenuItem = new ToolStripMenuItem();
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
-            увійтиToolStripMenuItem = new ToolStripMenuItem();
-            заєструватисяToolStripMenuItem = new ToolStripMenuItem();
             label4 = new Label();
             buttonFindExpensive = new Button();
             buttonStats = new Button();
@@ -56,27 +54,22 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.InactiveCaption;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[]
-            {
-                ColumnId,
-                ColumnCategory,
-                ColumnSum,
-                ColumnDate,
-                ColumnComment
-            });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnCategory, ColumnSum, ColumnDate, ColumnComment });
             dataGridView1.Location = new Point(207, 81);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(633, 384);
+            dataGridView1.Size = new Size(559, 384);
             dataGridView1.TabIndex = 0;
             // 
             // ColumnId
             // 
             ColumnId.HeaderText = "Id";
+            ColumnId.MinimumWidth = 6;
             ColumnId.Name = "ColumnId";
-            ColumnId.Visible = false; // прихована колонка
+            ColumnId.Visible = false;
+            ColumnId.Width = 125;
             // 
             // ColumnCategory
             // 
@@ -110,9 +103,7 @@
             // 
             comboBoxMonth.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxMonth.FormattingEnabled = true;
-            comboBoxMonth.Items.AddRange(new object[] {
-                "January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December" });
+            comboBoxMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
             comboBoxMonth.Location = new Point(18, 136);
             comboBoxMonth.Margin = new Padding(2);
             comboBoxMonth.Name = "comboBoxMonth";
@@ -123,8 +114,7 @@
             // 
             comboBoxCategory.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxCategory.FormattingEnabled = true;
-            comboBoxCategory.Items.AddRange(new object[] {
-                "Products", "Household chemicals", "Taxes", "Travel", "Fuel", "Devices" });
+            comboBoxCategory.Items.AddRange(new object[] { "Products", "Household chemicals", "Taxes", "Travel", "Fuel", "Devices" });
             comboBoxCategory.Location = new Point(18, 210);
             comboBoxCategory.Margin = new Padding(2);
             comboBoxCategory.Name = "comboBoxCategory";
@@ -163,21 +153,11 @@
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 204);
             menuStrip1.ImageScalingSize = new Size(24, 24);
-<<<<<<< HEAD
-            menuStrip1.Items.AddRange(new ToolStripItem[] {
-                addToolStripMenuItem,
-                editToolStripMenuItem,
-                deleteToolStripMenuItem,
-                увійтиToolStripMenuItem,
-                заєструватисяToolStripMenuItem });
-            menuStrip1.Location = new Point(404, 30);
-=======
-            menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, увійтиToolStripMenuItem, заєструватисяToolStripMenuItem });
-            menuStrip1.Location = new Point(350, 27);
->>>>>>> danja
+            menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem });
+            menuStrip1.Location = new Point(587, 27);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
-            menuStrip1.Size = new Size(562, 31);
+            menuStrip1.Size = new Size(179, 28);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -187,7 +167,7 @@
             addToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             addToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             addToolStripMenuItem.Name = "addToolStripMenuItem";
-            addToolStripMenuItem.Size = new Size(52, 27);
+            addToolStripMenuItem.Size = new Size(52, 24);
             addToolStripMenuItem.Text = "Add";
             addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
@@ -197,7 +177,7 @@
             editToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             editToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(50, 27);
+            editToolStripMenuItem.Size = new Size(50, 24);
             editToolStripMenuItem.Text = "Edit";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click_1;
             // 
@@ -206,27 +186,9 @@
             deleteToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             deleteToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(68, 27);
+            deleteToolStripMenuItem.Size = new Size(68, 24);
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click_1;
-            // 
-            // увійтиToolStripMenuItem
-            // 
-            увійтиToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            увійтиToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
-            увійтиToolStripMenuItem.Name = "увійтиToolStripMenuItem";
-            увійтиToolStripMenuItem.Size = new Size(70, 27);
-            увійтиToolStripMenuItem.Text = "Увійти";
-            увійтиToolStripMenuItem.Click += увійтиToolStripMenuItem_Click;
-            // 
-            // заєструватисяToolStripMenuItem
-            // 
-            заєструватисяToolStripMenuItem.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            заєструватисяToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
-            заєструватисяToolStripMenuItem.Name = "заєструватисяToolStripMenuItem";
-            заєструватисяToolStripMenuItem.Size = new Size(163, 27);
-            заєструватисяToolStripMenuItem.Text = "Зареєструватись";
-            заєструватисяToolStripMenuItem.Click += заєструватисяToolStripMenuItem_Click;
             // 
             // label4
             // 
@@ -272,7 +234,7 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(889, 479);
+            ClientSize = new Size(775, 479);
             Controls.Add(buttonStats);
             Controls.Add(buttonFindExpensive);
             Controls.Add(label4);
@@ -307,8 +269,6 @@
         private ToolStripMenuItem addToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
-        private ToolStripMenuItem увійтиToolStripMenuItem;
-        private ToolStripMenuItem заєструватисяToolStripMenuItem;
         private Label label4;
         private Button buttonFindExpensive;
         private DataGridViewTextBoxColumn ColumnId;
