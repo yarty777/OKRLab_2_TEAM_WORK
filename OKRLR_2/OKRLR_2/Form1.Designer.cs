@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             dataGridView1 = new DataGridView();
+            ColumnId = new DataGridViewTextBoxColumn();
             ColumnCategory = new DataGridViewTextBoxColumn();
             ColumnSum = new DataGridViewTextBoxColumn();
             ColumnDate = new DataGridViewTextBoxColumn();
@@ -54,7 +55,14 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.InactiveCaption;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColumnCategory, ColumnSum, ColumnDate, ColumnComment });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[]
+            {
+                ColumnId,
+                ColumnCategory,
+                ColumnSum,
+                ColumnDate,
+                ColumnComment
+            });
             dataGridView1.Location = new Point(207, 81);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
@@ -62,6 +70,12 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(761, 384);
             dataGridView1.TabIndex = 0;
+            // 
+            // ColumnId
+            // 
+            ColumnId.HeaderText = "Id";
+            ColumnId.Name = "ColumnId";
+            ColumnId.Visible = false; // прихована колонка
             // 
             // ColumnCategory
             // 
@@ -95,22 +109,25 @@
             // 
             comboBoxMonth.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxMonth.FormattingEnabled = true;
-            comboBoxMonth.Items.AddRange(new object[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" });
+            comboBoxMonth.Items.AddRange(new object[] {
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December" });
             comboBoxMonth.Location = new Point(18, 136);
             comboBoxMonth.Margin = new Padding(2);
             comboBoxMonth.Name = "comboBoxMonth";
-            comboBoxMonth.Size = new Size(174, 33);
+            comboBoxMonth.Size = new Size(174, 28);
             comboBoxMonth.TabIndex = 1;
             // 
             // comboBoxCategory
             // 
             comboBoxCategory.BackColor = SystemColors.GradientInactiveCaption;
             comboBoxCategory.FormattingEnabled = true;
-            comboBoxCategory.Items.AddRange(new object[] { "Products", "Household chemicals", "Taxes", "Travel", "Fuel", "Devices" });
+            comboBoxCategory.Items.AddRange(new object[] {
+                "Products", "Household chemicals", "Taxes", "Travel", "Fuel", "Devices" });
             comboBoxCategory.Location = new Point(18, 210);
             comboBoxCategory.Margin = new Padding(2);
             comboBoxCategory.Name = "comboBoxCategory";
-            comboBoxCategory.Size = new Size(174, 33);
+            comboBoxCategory.Size = new Size(174, 28);
             comboBoxCategory.TabIndex = 2;
             // 
             // label1
@@ -121,7 +138,7 @@
             label1.Location = new Point(18, 108);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(87, 28);
+            label1.Size = new Size(75, 23);
             label1.TabIndex = 4;
             label1.Text = "Місяць:";
             // 
@@ -133,7 +150,7 @@
             label2.Location = new Point(18, 182);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(110, 28);
+            label2.Size = new Size(95, 23);
             label2.TabIndex = 5;
             label2.Text = "Категорія:";
             // 
@@ -145,11 +162,16 @@
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 204);
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, editToolStripMenuItem, deleteToolStripMenuItem, увійтиToolStripMenuItem, заєструватисяToolStripMenuItem });
-            menuStrip1.Location = new Point(476, 30);
+            menuStrip1.Items.AddRange(new ToolStripItem[] {
+                addToolStripMenuItem,
+                editToolStripMenuItem,
+                deleteToolStripMenuItem,
+                увійтиToolStripMenuItem,
+                заєструватисяToolStripMenuItem });
+            menuStrip1.Location = new Point(404, 30);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
-            menuStrip1.Size = new Size(490, 36);
+            menuStrip1.Size = new Size(562, 31);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -159,7 +181,7 @@
             addToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             addToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             addToolStripMenuItem.Name = "addToolStripMenuItem";
-            addToolStripMenuItem.Size = new Size(63, 32);
+            addToolStripMenuItem.Size = new Size(52, 27);
             addToolStripMenuItem.Text = "Add";
             addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
@@ -169,23 +191,25 @@
             editToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             editToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(61, 32);
+            editToolStripMenuItem.Size = new Size(50, 27);
             editToolStripMenuItem.Text = "Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click_1;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             deleteToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(83, 32);
+            deleteToolStripMenuItem.Size = new Size(68, 27);
             deleteToolStripMenuItem.Text = "Delete";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click_1;
             // 
             // увійтиToolStripMenuItem
             // 
             увійтиToolStripMenuItem.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             увійтиToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             увійтиToolStripMenuItem.Name = "увійтиToolStripMenuItem";
-            увійтиToolStripMenuItem.Size = new Size(83, 32);
+            увійтиToolStripMenuItem.Size = new Size(70, 27);
             увійтиToolStripMenuItem.Text = "Увійти";
             увійтиToolStripMenuItem.Click += увійтиToolStripMenuItem_Click;
             // 
@@ -194,7 +218,7 @@
             заєструватисяToolStripMenuItem.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             заєструватисяToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight;
             заєструватисяToolStripMenuItem.Name = "заєструватисяToolStripMenuItem";
-            заєструватисяToolStripMenuItem.Size = new Size(191, 32);
+            заєструватисяToolStripMenuItem.Size = new Size(163, 27);
             заєструватисяToolStripMenuItem.Text = "Зареєструватись";
             заєструватисяToolStripMenuItem.Click += заєструватисяToolStripMenuItem_Click;
             // 
@@ -206,7 +230,7 @@
             label4.Location = new Point(18, 9);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(331, 54);
+            label4.Size = new Size(284, 46);
             label4.TabIndex = 8;
             label4.Text = "ExpenseTracker";
             label4.Click += label4_Click;
@@ -226,7 +250,7 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(975, 479);
@@ -267,6 +291,7 @@
         private ToolStripMenuItem заєструватисяToolStripMenuItem;
         private Label label4;
         private Button buttonFindExpensive;
+        private DataGridViewTextBoxColumn ColumnId;
         private DataGridViewTextBoxColumn ColumnCategory;
         private DataGridViewTextBoxColumn ColumnSum;
         private DataGridViewTextBoxColumn ColumnDate;

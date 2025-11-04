@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OKRLR_2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06236ebe41d887224e7591cbac46a3954245d249")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1be67ec57421908e645c446e54846146ad419c32")]
 [assembly: System.Reflection.AssemblyProductAttribute("OKRLR_2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OKRLR_2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
