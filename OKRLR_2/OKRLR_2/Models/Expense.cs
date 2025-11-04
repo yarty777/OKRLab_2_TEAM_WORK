@@ -89,7 +89,22 @@ public class MongoService
         var collection = GetCollection();
         return collection.Find(d => d.CustomerID == AppSession.CurrentUserId).ToList();
     }
+    // якщо що це copilot порадив
+    // Update expense by Id
+    public void UpdateExpense(Expense expense)
+    {
+        var collection = GetCollection();
+        var filter = Builders<Expense>.Filter.Eq(x => x.Id, expense.Id);
+        collection.ReplaceOne(filter, expense);
+    }
 
+    // Delete expense by Id
+    public void DeleteExpense(string id)
+    {
+        var collection = GetCollection();
+        var filter = Builders<Expense>.Filter.Eq(x => x.Id, id);
+        collection.DeleteOne(filter);
+    }
 }
 
 public static class AppSession
