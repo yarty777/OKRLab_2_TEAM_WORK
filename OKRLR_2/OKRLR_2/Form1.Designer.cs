@@ -46,6 +46,7 @@
             label4 = new Label();
             buttonFindExpensive = new Button();
             buttonStats = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -207,7 +208,7 @@
             // 
             buttonFindExpensive.BackColor = SystemColors.InactiveCaptionText;
             buttonFindExpensive.ForeColor = SystemColors.ButtonHighlight;
-            buttonFindExpensive.Location = new Point(18, 317);
+            buttonFindExpensive.Location = new Point(18, 259);
             buttonFindExpensive.Margin = new Padding(4);
             buttonFindExpensive.Name = "buttonFindExpensive";
             buttonFindExpensive.Size = new Size(174, 38);
@@ -229,12 +230,26 @@
             buttonStats.UseVisualStyleBackColor = false;
             buttonStats.Click += buttonStats_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.InactiveCaptionText;
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(18, 297);
+            button1.Margin = new Padding(4);
+            button1.Name = "button1";
+            button1.Size = new Size(174, 38);
+            button1.TabIndex = 11;
+            button1.Text = "Скасувати";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(775, 479);
+            Controls.Add(button1);
             Controls.Add(buttonStats);
             Controls.Add(buttonFindExpensive);
             Controls.Add(label4);
@@ -245,6 +260,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(2);
@@ -277,5 +293,6 @@
         private DataGridViewTextBoxColumn ColumnDate;
         private DataGridViewTextBoxColumn ColumnComment;
         private Button buttonStats;
+        private Button button1;
     }
 }

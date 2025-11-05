@@ -53,21 +53,20 @@ public class MongoService
     {
         var connectionString = "mongodb+srv://yaroslav0908l_db_user:yar0908%40%23@formia.awxcqul.mongodb.net/?appName=ForMiA";
         var client = new MongoClient(connectionString);
-        _database = client.GetDatabase("ForOKR"); // назва бази даних
+        _database = client.GetDatabase("ForOKR");
     }
 
     private IMongoCollection<Expense> GetCollection()
     {
-        return _database.GetCollection<Expense>("Expenses"); // назва колекції
+        return _database.GetCollection<Expense>("Expenses");
     }
 
-    // Запис даних
     public void InsertData(string category, string suma, string date, string comentar)
     {
         var collection = GetCollection();
         var newExpense = new Expense
         {
-            CustomerID = AppSession.CurrentUserId, // завжди один і той самий користувач
+            CustomerID = AppSession.CurrentUserId,
             Category = category,
             Suma = suma,
             Date = date,
@@ -76,21 +75,18 @@ public class MongoService
         collection.InsertOne(newExpense);
     }
 
-    // Читання всіх даних
     public List<Expense> GetAllData()
     {
         var collection = GetCollection();
         return collection.Find(_ => true).ToList();
     }
 
-    // Читання вибірково за умовою (наприклад, всі, де Age > 20)
     public List<Expense> GetCurrentUserData()
     {
         var collection = GetCollection();
         return collection.Find(d => d.CustomerID == AppSession.CurrentUserId).ToList();
     }
-    // якщо що це copilot порадив
-    // Update expense by Id
+
     public void UpdateExpense(Expense expense)
     {
         var collection = GetCollection();
@@ -98,7 +94,6 @@ public class MongoService
         collection.ReplaceOne(filter, expense);
     }
 
-    // Delete expense by Id
     public void DeleteExpense(string id)
     {
         var collection = GetCollection();

@@ -31,7 +31,7 @@ namespace OKRLR_2
             foreach (var exp in expenses)
             {
                 dataGridView1.Rows.Add(
-                    exp.Id,           
+                    exp.Id,
                     exp.Category,
                     exp.Suma,
                     exp.Date,
@@ -78,7 +78,6 @@ namespace OKRLR_2
                 default: return 0;
             }
         }
-        // кнопки
         private void buttonFindExpensive_Click(object sender, EventArgs e)
         {
             string selectedMonth = comboBoxMonth.Text;
@@ -92,34 +91,43 @@ namespace OKRLR_2
 
             try
             {
-                var allExpenses = mongoService.GetCurrentUserData(); // отримуємо дані користувача
+                var allExpenses = mongoService.GetCurrentUserData(); 
 
-                // фільтрація
                 var filtered = allExpenses.AsEnumerable();
 
                 if (!string.IsNullOrEmpty(selectedMonth))
                 {
-                    filtered = filtered.Where(e => e.Date.Split('.')[1] == selectedMonth);
+                    int month = MonthNumber(selectedMonth);
+                    filtered = filtered.Where(e =>
+                    {
+                        if (DateTime.TryParse(e.Date, out DateTime date))
+                            return date.Month == month;
+                        return false;
+                    });
                 }
 
                 if (!string.IsNullOrEmpty(selectedCategory))
                 {
                     filtered = filtered.Where(e => e.Category == selectedCategory);
                 }
+                var result = filtered.ToList();
+
+                if (result.Count == 0)
+                {
+                    MessageBox.Show("Витрат за обраними параметрами не знайдено.");
+                    return;
+                }
+
                 dataGridView1.Rows.Clear();
-                foreach (var expense in filtered)
+                foreach (var expense in result)
                 {
                     dataGridView1.Rows.Add(
+                        expense.Id,
                         expense.Category,
                         expense.Suma,
                         expense.Date,
                         expense.Comentar
                     );
-                }
-
-                if (!filtered.Any())
-                {
-                    MessageBox.Show("Витрат за обраними параметрами не знайдено.");
                 }
             }
             catch (Exception ex)
@@ -266,5 +274,11 @@ namespace OKRLR_2
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            comboBoxCategory.SelectedIndex = -1;
+            comboBoxMonth.SelectedIndex = -1;
+            LoadData();
+        }
     }
 }

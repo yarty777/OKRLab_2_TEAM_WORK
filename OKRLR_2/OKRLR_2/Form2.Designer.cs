@@ -167,6 +167,7 @@
             Controls.Add(label1);
             Controls.Add(textBoxComentar);
             Controls.Add(textBoxSum);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "Form2";
